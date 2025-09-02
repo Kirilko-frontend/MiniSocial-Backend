@@ -20,7 +20,8 @@ connectDB();
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin:
+      "https://mini-social-frontend-8pqpw3i7p-kirilko-frontends-projects.vercel.app",
     credentials: true,
   })
 );
