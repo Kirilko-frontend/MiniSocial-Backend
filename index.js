@@ -20,7 +20,7 @@ connectDB();
 
 app.use(
   cors({
-    origin: "https://mini-social-frontend.vercel.app/",
+    origin: "https://mini-social-frontend.vercel.app",
     credentials: true,
   })
 );
