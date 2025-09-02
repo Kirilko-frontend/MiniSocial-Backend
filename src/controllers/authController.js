@@ -85,9 +85,9 @@ export const authController = {
       res
         .cookie("token", token, {
           httpOnly: true,
-          secure: process.env.NODE_ENV === "production",
+          secure: true,
           maxAge: 3600000,
-          sameSite: "lax",
+          sameSite: "none",
         })
         .status(200)
         .json({ status: 200, message: "Login successful" });

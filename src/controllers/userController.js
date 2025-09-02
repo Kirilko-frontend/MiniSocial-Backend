@@ -1,31 +1,6 @@
 import User from "../models/User.js";
 
 export const userController = {
-  updateTheme: async (req, res, next) => {
-    try {
-      const { theme } = req.body;
-
-      if (!["light", "dark"].includes(theme)) {
-        return res.status(400).json({ message: "Invalid theme" });
-      }
-
-      const updatedUser = await User.findByIdAndUpdate(
-        req.userId,
-        { theme },
-        { new: true }
-      );
-
-      if (!updatedUser) {
-        return res.status(404).json({ message: "User not found" });
-      }
-
-      const { password, ...userData } = updatedUser._doc;
-      res.json({ data: userData });
-    } catch (error) {
-      console.error(error);
-      next(error);
-    }
-  },
   getCurrentUser: async (req, res, next) => {
     try {
       const user = await User.findById(req.userId);
